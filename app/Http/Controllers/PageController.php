@@ -15,11 +15,6 @@ class PageController extends Controller
      */
     public function show($page = null)
     {
-        // For home page, we use special method for now to include featured projects
-        if ($page === null || $page === 'home') {
-            return $this->home();
-        }
-
         $routeName = request()->route()->getName();
         $pageKey = str_replace(['.', '-'], '_', $routeName);
 
