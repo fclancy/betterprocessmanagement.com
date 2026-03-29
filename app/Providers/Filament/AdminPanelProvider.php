@@ -2,30 +2,30 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Facades\Filament;
-use Illuminate\Support\ServiceProvider;
+use Filament\Panel;
+use Filament\PanelProvider;
 
-class AdminPanelProvider extends ServiceProvider
+class AdminPanelProvider extends PanelProvider
 {
-    public function register(): void
+    public function panel(Panel $panel): Panel
     {
-        Filament::panel([
-            'id' => 'admin',
-            'path' => 'admin',
-            'discoverResources' => true,
-            'discoverPages' => true,
-            'discoverWidgets' => true,
-            'middleware' => ['web', 'auth'],
-            'authMiddleware' => ['auth'],
-            'resources' => [
+        return $panel
+            ->id('admin')
+            ->path('admin')
+            ->discoverResources(true)
+            ->discoverPages(true)
+            ->discoverWidgets(true)
+            ->middleware(['web', 'auth'])
+            ->authMiddleware(['auth'])
+            ->resources([
                 'pages' => [
                     \Filament\Pages\Dashboard::class,
                 ],
-            ],
-            'widgets' => [
+            ])
+            ->widgets([
                 \Filament\Widgets\AccountWidget::class,
                 \Filament\Widgets\FilamentInfoWidget::class,
-            ],
-        ]);
+            ]);
     }
 }
+
