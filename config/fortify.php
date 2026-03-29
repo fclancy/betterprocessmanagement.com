@@ -23,20 +23,20 @@ return [
         'register' => null,
     ],
 
-    'views' => false,
+    'views' => true,
 
     'features' => [
         // Registration...
-        // registration: true, // false if client users not allowed
+        // 'registration' => true, // false if client users not allowed
 
         // Password Reset...
-        // resetPasswords: true,
+        'resetPasswords' => true,
 
         // Email Verification...
-        // verification: true,
+        // 'verification' => true,
 
         // Profile Management...
-        // profileImages: false,
+        // 'profileImages' => false,
     ],
 
     'password' => [

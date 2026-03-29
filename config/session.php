@@ -26,4 +26,6 @@ return [
 
     'same_site' => 'lax',
 
+    'lottery' => [2, 100],
+
 ];

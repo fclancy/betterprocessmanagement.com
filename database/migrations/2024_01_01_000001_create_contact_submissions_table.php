@@ -12,8 +12,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('subject')->nullable();
+            $table->string('company')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('subject');
             $table->text('message');
+            $table->string('ip_address')->nullable();
+            $table->text('user_agent')->nullable();
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }

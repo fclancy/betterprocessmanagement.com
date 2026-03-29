@@ -13,10 +13,15 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->string('image_path')->nullable();
-            $table->string('link_url')->nullable();
+            $table->string('image_path');
+            $table->string('image_alt')->nullable();
+            $table->json('additional_images')->nullable();
+            $table->string('category')->nullable()->index();
+            $table->string('client')->nullable();
+            $table->string('project_url')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_published')->default(false);
             $table->integer('order')->default(0);
-            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
