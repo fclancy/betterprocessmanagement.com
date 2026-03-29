@@ -17,10 +17,8 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->middleware(['web', 'auth'])
             ->authMiddleware(['auth'])
-            ->resources([
-                'pages' => [
-                    \Filament\Pages\Dashboard::class,
-                ],
+            ->pages([
+                \Filament\Pages\Dashboard::class,
             ])
             ->widgets([
                 \Filament\Widgets\AccountWidget::class,
