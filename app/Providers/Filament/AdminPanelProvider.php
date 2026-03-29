@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AdminPanelProvider extends ServiceProvider
 {
-    public function boot(): void
+    public function register(): void
     {
         Filament::panel([
             'id' => 'admin',
