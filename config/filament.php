@@ -32,6 +32,15 @@ return [
             'discoverWidgets' => true,
             'middleware' => ['web', 'auth'],
             'authMiddleware' => ['auth'],
+            'resources' => [
+                'pages' => [
+                    \Filament\Pages\Dashboard::class,
+                ],
+            ],
+            'widgets' => [
+                \Filament\Widgets\AccountWidget::class,
+                \Filament\Widgets\FilamentInfoWidget::class,
+            ],
         ],
     ],
 
