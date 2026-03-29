@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class ContactSubmissionResource extends Resource
 {
@@ -125,7 +126,7 @@ class ContactSubmissionResource extends Resource
         return false;
     }
 
-    public static function canEdit(ContactSubmission $record): bool
+    public static function canEdit(Model $record): bool
     {
         // Editing submissions not allowed
         return false;
